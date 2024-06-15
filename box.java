@@ -1,20 +1,15 @@
 class box{
-	int IdNum;
 	int[] cells = new int[9];
 
 	// Creating a default box
 	public box(){
-		IdNum = 0;
-
 		for(int cellIndex = 0; cellIndex <= 8; cellIndex++){
 			cells[cellIndex] = 0;
 		}
 	}
 
 	//Creating a box with custom inputs
-	public box(int inputIdNum, int inputZero, int inputOne, int inputTwo, int inputThree, int inputFour, int inputFive, int inputSix, int inputSeven, int inputEight){
-		IdNum = inputIdNum;
-
+	public box(int inputZero, int inputOne, int inputTwo, int inputThree, int inputFour, int inputFive, int inputSix, int inputSeven, int inputEight){
 		for(int cellIndex = 0; cellIndex <= 8; cellIndex++){
 			     if(cellIndex == 0) cells[0] = inputZero;
 			else if(cellIndex == 1) cells[1] = inputOne;
@@ -30,6 +25,20 @@ class box{
 
 	public void changeCell(int cellYouWantToChange, int newNum){
 		cells[cellYouWantToChange] = newNum;
+	}
+
+	// Returns false is the box contains multiple of the same value and true otherwize
+	public boolean checkBox(){
+		for(int firstCellIndex = 0; firstCellIndex <= 8; firstCellIndex++){
+			for(int secondCellIndex = 0; secondCellIndex <= 8; secondCellIndex++){
+				if(firstCellIndex == secondCellIndex){
+					break;
+				}else if(cells[firstCellIndex] == cells[secondCellIndex]){
+					return false;
+				}
+			}
+		}
+		return true;
 	}
 
 	
