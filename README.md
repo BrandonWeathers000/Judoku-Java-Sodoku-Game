@@ -4,7 +4,6 @@
 This is a simple sudoku game written in java.
 
 - Need to work on:
-    - Create box checking function
     - Create row checking function
     - Create column checking function
 
