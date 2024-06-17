@@ -1,14 +1,12 @@
 class box{
 	int[] cells = new int[9];
 
-	// Creating a default box
 	public box(){
 		for(int cellIndex = 0; cellIndex <= 8; cellIndex++){
 			cells[cellIndex] = 0;
 		}
 	}
 
-	//Creating a box with custom inputs
 	public box(int inputZero, int inputOne, int inputTwo, int inputThree, int inputFour, int inputFive, int inputSix, int inputSeven, int inputEight){
 		for(int cellIndex = 0; cellIndex <= 8; cellIndex++){
 			     if(cellIndex == 0) cells[0] = inputZero;
@@ -27,8 +25,11 @@ class box{
 		cells[cellYouWantToChange] = newNum;
 	}
 
-	// Returns false is the box contains multiple of the same value and true otherwize
-	public boolean checkBox(){
+	public int getCellValue(int whichCell){
+		return cells[whichCell];
+	}
+
+	public boolean isThisBoxCorrect(){
 		for(int firstCellIndex = 0; firstCellIndex <= 8; firstCellIndex++){
 			for(int secondCellIndex = 0; secondCellIndex <= 8; secondCellIndex++){
 				if(firstCellIndex == secondCellIndex){
@@ -40,7 +41,6 @@ class box{
 		}
 		return true;
 	}
-
 	
 	public void printBox(){
 		System.out.println(" " + cells[0] + " | " + cells[1] + " | " + cells[2]);
