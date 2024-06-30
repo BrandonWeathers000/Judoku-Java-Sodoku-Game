@@ -1,13 +1,13 @@
-class box{
+class Box{
 	int[] cells = new int[9];
 
-	public box(){
+	public Box(){
 		for(int cellIndex = 0; cellIndex <= 8; cellIndex++){
 			cells[cellIndex] = 0;
 		}
 	}
 
-	public box(int inputZero, int inputOne, int inputTwo, int inputThree, int inputFour, int inputFive, int inputSix, int inputSeven, int inputEight){
+	public Box(int inputZero, int inputOne, int inputTwo, int inputThree, int inputFour, int inputFive, int inputSix, int inputSeven, int inputEight){
 		for(int cellIndex = 0; cellIndex <= 8; cellIndex++){
 			     if(cellIndex == 0) cells[0] = inputZero;
 			else if(cellIndex == 1) cells[1] = inputOne;
