@@ -4,7 +4,7 @@
 This is a simple sudoku game written in java.
 
 Need to work on:
-- Create column checking function
+- A way for the user to select a certain cell and change it
 
 Please feel free to reach out to me if you have any suggestions.
 
