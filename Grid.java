@@ -24,6 +24,7 @@ class Grid{
 	}
 
 	public boolean checkRow(int rowIndex){
+		// Will return false if all the elements in the given row are the same
 		int[] currentRow = new int[9];
 		if(rowIndex == 0){
 			currentRow[0] = Boxes[0].getCellValue(0);
@@ -120,17 +121,119 @@ class Grid{
 		return allTheSame(currentRow);
 	}
 
+	public void printArray(int[] inputArray){
+		for(int index = 0; index < inputArray.length; index++){
+			System.out.println(inputArray[index]);
+		}
+	}
+
+	public boolean checkColumn(int columnIndex){
+		// Will return false if all the elements in the given column are the same
+		int[] currentColumn = new int[9];
+		if(columnIndex == 0){
+			currentColumn[0] = Boxes[0].getCellValue(0);
+			currentColumn[1] = Boxes[0].getCellValue(3);
+			currentColumn[2] = Boxes[0].getCellValue(6);
+			currentColumn[3] = Boxes[3].getCellValue(0);
+			currentColumn[4] = Boxes[3].getCellValue(3);
+			currentColumn[5] = Boxes[3].getCellValue(6);
+			currentColumn[6] = Boxes[6].getCellValue(0);
+			currentColumn[7] = Boxes[6].getCellValue(3);
+			currentColumn[8] = Boxes[6].getCellValue(6);
+		}else if(columnIndex == 1){
+			currentColumn[0] = Boxes[0].getCellValue(1); currentColumn[1] = Boxes[0].getCellValue(4);
+			currentColumn[2] = Boxes[0].getCellValue(7);
+			currentColumn[3] = Boxes[3].getCellValue(1);
+			currentColumn[4] = Boxes[3].getCellValue(4);
+			currentColumn[5] = Boxes[3].getCellValue(7);
+			currentColumn[6] = Boxes[6].getCellValue(1);
+			currentColumn[7] = Boxes[6].getCellValue(4);
+			currentColumn[8] = Boxes[6].getCellValue(7);
+		}else if(columnIndex == 2){
+			currentColumn[0] = Boxes[0].getCellValue(2);
+			currentColumn[1] = Boxes[0].getCellValue(5);
+			currentColumn[2] = Boxes[0].getCellValue(8);
+			currentColumn[3] = Boxes[3].getCellValue(2);
+			currentColumn[4] = Boxes[3].getCellValue(5);
+			currentColumn[5] = Boxes[3].getCellValue(8);
+			currentColumn[6] = Boxes[6].getCellValue(2);
+			currentColumn[7] = Boxes[6].getCellValue(5);
+			currentColumn[8] = Boxes[6].getCellValue(8);
+		}else if(columnIndex == 3){
+			currentColumn[0] = Boxes[1].getCellValue(0);
+			currentColumn[1] = Boxes[1].getCellValue(3);
+			currentColumn[2] = Boxes[1].getCellValue(6);
+			currentColumn[3] = Boxes[4].getCellValue(0);
+			currentColumn[4] = Boxes[4].getCellValue(3);
+			currentColumn[5] = Boxes[4].getCellValue(6);
+			currentColumn[6] = Boxes[7].getCellValue(0);
+			currentColumn[7] = Boxes[7].getCellValue(3);
+			currentColumn[8] = Boxes[7].getCellValue(6);
+		}else if(columnIndex == 4){
+			currentColumn[0] = Boxes[1].getCellValue(1);
+			currentColumn[1] = Boxes[1].getCellValue(4);
+			currentColumn[2] = Boxes[1].getCellValue(7);
+			currentColumn[3] = Boxes[4].getCellValue(1);
+			currentColumn[4] = Boxes[4].getCellValue(4);
+			currentColumn[5] = Boxes[4].getCellValue(7);
+			currentColumn[6] = Boxes[7].getCellValue(1);
+			currentColumn[7] = Boxes[7].getCellValue(4);
+			currentColumn[8] = Boxes[7].getCellValue(7);
+		}else if(columnIndex == 5){
+			currentColumn[0] = Boxes[1].getCellValue(2);
+			currentColumn[1] = Boxes[1].getCellValue(5);
+			currentColumn[2] = Boxes[1].getCellValue(8);
+			currentColumn[3] = Boxes[4].getCellValue(2);
+			currentColumn[4] = Boxes[4].getCellValue(5);
+			currentColumn[5] = Boxes[4].getCellValue(8);
+			currentColumn[6] = Boxes[7].getCellValue(2);
+			currentColumn[7] = Boxes[7].getCellValue(5);
+			currentColumn[8] = Boxes[7].getCellValue(8);
+		}else if(columnIndex == 6){
+			currentColumn[0] = Boxes[2].getCellValue(0);
+			currentColumn[1] = Boxes[2].getCellValue(3);
+			currentColumn[2] = Boxes[2].getCellValue(6);
+			currentColumn[3] = Boxes[5].getCellValue(0);
+			currentColumn[4] = Boxes[5].getCellValue(3);
+			currentColumn[5] = Boxes[5].getCellValue(6);
+			currentColumn[6] = Boxes[8].getCellValue(0);
+			currentColumn[7] = Boxes[8].getCellValue(3);
+			currentColumn[8] = Boxes[8].getCellValue(6);
+		}else if(columnIndex == 7){           
+			currentColumn[0] = Boxes[2].getCellValue(1);
+			currentColumn[1] = Boxes[2].getCellValue(4);
+			currentColumn[2] = Boxes[2].getCellValue(7);
+			currentColumn[3] = Boxes[5].getCellValue(1);
+			currentColumn[4] = Boxes[5].getCellValue(4);
+			currentColumn[5] = Boxes[5].getCellValue(7);
+			currentColumn[6] = Boxes[8].getCellValue(1);
+			currentColumn[7] = Boxes[8].getCellValue(4);
+			currentColumn[8] = Boxes[8].getCellValue(7);
+		}else{                                            
+			currentColumn[0] = Boxes[2].getCellValue(2);
+			currentColumn[1] = Boxes[2].getCellValue(5);
+			currentColumn[2] = Boxes[2].getCellValue(8);
+			currentColumn[3] = Boxes[5].getCellValue(2);
+			currentColumn[4] = Boxes[5].getCellValue(5);
+			currentColumn[5] = Boxes[5].getCellValue(8);
+			currentColumn[6] = Boxes[8].getCellValue(2);
+			currentColumn[7] = Boxes[8].getCellValue(5);
+			currentColumn[8] = Boxes[8].getCellValue(8);
+		}
+		return allTheSame(currentColumn);
+	}
+
 	public boolean allTheSame(int[] givenRow){
 		for(int firstIndex = 0; firstIndex < givenRow.length; firstIndex++){
 			for(int secondIndex = 0; secondIndex < givenRow.length; secondIndex++){
 				if(firstIndex == secondIndex){
 					break;
 				}else if(givenRow[firstIndex] == givenRow[secondIndex]){
-					return false;
+					return true;
 				}
 			}
 		}
-		return true;
+		return false;
 	}
 
 	// Method to print out general info about each cell for debugging purposes
