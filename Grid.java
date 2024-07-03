@@ -23,11 +23,13 @@ class Grid{
 		}
 	}
 
-	public boolean alternateCheckRow(wantedRow){
+	/*
+	public boolean alternateCheckRow(int wantedRow){
 		int[] numbersInRow = new int[9];
 		// Need to check with father to see if there
 		// is a better way to implement this method
 	}
+	*/
 
 	public boolean checkRow(int wantedRow){
 		// Will return false if all the elements in the given row are the same

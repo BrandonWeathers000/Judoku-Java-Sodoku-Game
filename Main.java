@@ -17,6 +17,6 @@ public class Main{
 
 		//System.out.println(myGrid.checkRow(0));
 		
-		System.out.println(myGrid.checkColumn(0));
+		//System.out.println(myGrid.checkColumn(0));
 	}
 }
